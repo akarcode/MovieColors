@@ -13,7 +13,7 @@ This Python script can collect color values per packet via FFprobe and write the
 
 ### Requirements
 
-**FFprobe** is used to read out the information from your movie.
+**FFprobe** is used to read out the information from your movie.__
 And you'll need to import **NumPy** and **PIL** in python.
 
 
