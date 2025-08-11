@@ -2,18 +2,28 @@ from PIL import Image, ImageFilter
 import numpy as np
 import subprocess
 
-ffprobe = 'C:\\Program Files\\FFmpeg\\bin\\ffprobe.exe'
-movie = 'C\\\\:/Folder/Movie.mkv'
-output = 'C:\\Folder\\movie_colors.png'
-starttime = '00\\:00\\:00'
-endtime = '00\\:01\\:00'
-croptop = '0'
-cropbottom = '0'
-nth = 10
+ffprobe = r'C:\Program Files\FFmpeg_BtbN\bin\ffprobe.exe'
+movie = r'C:/Folder/Movie.mkv'
+output = r'C:/Folder/movie_colors.png'
+
+# hh:mm:ss
+starttime = '00:00:00'
+endtime = '01:30:00'
+# px
+croptop = 0
+cropbottom = 0
 height = 800
 blur = 1
+# frames
+nth = 10
 
-# ###########
+# --- end of settings ---
+
+movie = movie.replace('\\', '/').replace(':', r'\\:', 1)
+starttime = starttime.replace(':', r'\:')
+endtime = endtime.replace(':', r'\:')
+croptop = str(croptop)
+cropbottom = str(cropbottom)
 
 grab_y = 'frame_tags=lavfi.signalstats.YLOW,lavfi.signalstats.YAVG,lavfi.signalstats.YHIGH,'
 grab_u = 'lavfi.signalstats.ULOW,lavfi.signalstats.UAVG,lavfi.signalstats.UHIGH,'
@@ -85,3 +95,4 @@ img.paste(highimage, (0, 0), highimage)
 imgblur = img.filter(ImageFilter.BoxBlur(blur))
 
 imgblur.save(output)
+
