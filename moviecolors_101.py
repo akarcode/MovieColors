@@ -2,7 +2,7 @@ from PIL import Image, ImageFilter
 import numpy as np
 import subprocess
 
-ffprobe = r'C:\Program Files\FFmpeg_BtbN\bin\ffprobe.exe'
+ffprobe = r'C:/Program Files/FFmpeg/ffprobe.exe'
 movie = r'C:/Folder/Movie.mkv'
 output = r'C:/Folder/movie_colors.png'
 
@@ -95,4 +95,5 @@ img.paste(highimage, (0, 0), highimage)
 imgblur = img.filter(ImageFilter.BoxBlur(blur))
 
 imgblur.save(output)
+
 
