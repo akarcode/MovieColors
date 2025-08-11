@@ -6,7 +6,6 @@ This Python script can collect color values per packet via FFprobe and write the
 
 ### Additional notes
 
-- Be cautious with the escape characters in the file paths.
 - This script does not write frames to your Harddisk as other similar script for this do.
 - On a fast SSD drive it will take about 6min for the script to finish a 90min movie. The speed is limited to FFprobe, the additional math only takes about 1 second to complete.
 
@@ -18,5 +17,8 @@ And you'll need to import **NumPy** and **PIL** in python.
 
 
 ### Changelog
+
+v1.0.1
+- Automatic escape character handling.
 
 v1.0 (Initial release)
